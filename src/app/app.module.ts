@@ -8,6 +8,7 @@ import { PageLandingComponent } from './page-landing/page-landing.component';
 
 import { AppRoutingModule } from "./app-routing.module";
 import { ProjectCardComponent } from './project-card/project-card.component';
+import { PageSingleProjectComponent } from './page-single-project/page-single-project.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ProjectCardComponent } from './project-card/project-card.component';
     HeaderComponent,
     FooterComponent,
     PageLandingComponent,
-    ProjectCardComponent
+    ProjectCardComponent,
+    PageSingleProjectComponent
   ],
   imports: [
     BrowserModule,

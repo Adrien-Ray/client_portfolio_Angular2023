@@ -1,0 +1,13 @@
+header {
+    background-color: rgb(61, 61, 61);
+    padding: .5em;
+    nav {
+        a {
+            text-decoration: none;
+            color: white;
+            &.active {
+                color: rgb(196, 196, 196);
+            }
+        }
+    }
+}
