@@ -1,1 +1,3 @@
-<p>the title is: {{project.project_title}} <button (click)="onViewProject()">view</button></p>
+<div class="backCard" [style.background]="'url(' + project_thumbnail_allUrl + ')'" (click)="onViewProject()">
+    <h2>{{project.project_title}}</h2>
+</div>

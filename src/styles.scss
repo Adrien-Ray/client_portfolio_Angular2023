@@ -15,5 +15,10 @@ body {
             margin-bottom: auto;
             padding: 0 .5rem;
         }
+        app-page-landing {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
     }
 }
