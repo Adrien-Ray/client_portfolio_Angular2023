@@ -1,12 +1,18 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Project } from "../models/project.model";
+import { ProjectsService } from "../services/projects.service";
 
 @Component({
   selector: 'app-page-single-project',
   templateUrl: './page-single-project.component.html',
   styleUrls: ['./page-single-project.component.scss']
 })
-export class PageSingleProjectComponent {
-  constructor(private router: Router){}
-  
+export class PageSingleProjectComponent implements OnInit {
+  project!: Project;
+  constructor(private projectsService: ProjectsService, private router: Router, private route: ActivatedRoute){}
+  ngOnInit(){
+    const projectId = +this.route.snapshot.params['id'];
+    this.project = this.projectsService.getByIdProject(projectId);
+  }
 }

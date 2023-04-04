@@ -63,6 +63,14 @@ export class ProjectsService {
     getAllProjects(): Project[]{
         return this.projects;
     }
+    getByIdProject(projectId: number): Project{
+        const result = this.projects.find(project => project.id === projectId);
+        if (!result) {
+            throw new Error('id not found ...');
+        } else {
+            return result;
+        }
+    }
     /* getFaceSnapById(faceSnapId: number): FaceSnap {
         const faceSnap = this.facesnaps.find(faceSnap => faceSnap.id === faceSnapId);
         if (!faceSnap) {
