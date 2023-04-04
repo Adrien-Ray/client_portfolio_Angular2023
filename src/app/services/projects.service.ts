@@ -438,4 +438,12 @@ export class ProjectsService {
             return result;
         }
     }
+    getByIdProjectThumbUrl(projectId: number): string{
+        const result = this.projects.find(project => project.project_id === `${projectId}`);
+        if (!result) {
+            throw new Error('id not found ...');
+        } else {
+            return `https://portfolio.accesdenied.net/assets/img/upload/${result.project_thumbnail}`;
+        }
+    }
 }

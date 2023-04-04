@@ -10,10 +10,11 @@ import { ProjectsService } from "../services/projects.service";
 })
 export class PageSingleProjectComponent implements OnInit {
   project!: Project;
+  project_thumbnail_allUrl!: string;
   constructor(private projectsService: ProjectsService, private router: Router, private route: ActivatedRoute){}
   ngOnInit(){
     const projectId = +this.route.snapshot.params['id'];
     this.project = this.projectsService.getByIdProject(projectId);
-    this.project.project_thumbnail_allUrl = `https://portfolio.accesdenied.net/assets/img/upload/${this.project.project_thumbnail}`;
+    this.project_thumbnail_allUrl = this.projectsService.getByIdProjectThumbUrl(+this.project.project_id);
   }
 }

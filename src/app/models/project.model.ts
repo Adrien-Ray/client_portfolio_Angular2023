@@ -2,7 +2,6 @@ export class Project {
     project_id!: string;
     project_title!: string;
     project_thumbnail!: string;
-    project_thumbnail_allUrl?: string;
     project_thumbnail_fit!: string;
     project_context!: string;
     project_begin!: string;
