@@ -9,32 +9,7 @@ import { Project } from "../models/project.model";
 })
 
 export class ProjectsService {
-    constructor(private httpClient: HttpClient) { }
-    endpoint = 'https://portfolio.accesdenied.net/api/';
-    httpHeader = {
-        headers: new HttpHeaders({
-            'Content-Type': 'application/json',
-        }),
-    };
-    getUsers(): Observable<Project> {
-        return this.httpClient
-            .get<Project>(this.endpoint)
-            .pipe(retry(1), catchError(this.processError));
-    }
-    processError(err: any) {
-        let message = '';
-        if (err.error instanceof ErrorEvent) {
-            message = err.error.message;
-        } else {
-            message = `Error Code: ${err.status}\nMessage: ${err.message}`;
-        }
-        console.log(message);
-        return throwError(() => {
-            message;
-        });
-      }
-    
-    // projects: Project[] = this.getUsers();
+    constructor() { }
     
     projects: Project[] = [
         {
