@@ -12,6 +12,6 @@ export class ProjectCardComponent implements OnInit {
   constructor(private router: Router) {}
   ngOnInit() {}
   onViewProject() {
-    this.router.navigateByUrl(`singleproject/${this.project.id}`);
+    this.router.navigateByUrl(`singleproject/${this.project.project_id}`);
   }
 }

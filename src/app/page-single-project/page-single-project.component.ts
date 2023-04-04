@@ -14,5 +14,6 @@ export class PageSingleProjectComponent implements OnInit {
   ngOnInit(){
     const projectId = +this.route.snapshot.params['id'];
     this.project = this.projectsService.getByIdProject(projectId);
+    this.project.project_thumbnail = `https://portfolio.accesdenied.net/assets/img/upload/${this.project.project_thumbnail}`;
   }
 }
