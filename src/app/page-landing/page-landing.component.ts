@@ -9,8 +9,12 @@ import { ProjectsService } from "../services/projects.service";
 })
 export class PageLandingComponent implements OnInit{
   projects!: Project[];
+  projectsTest!: any;
   constructor(private projectService: ProjectsService){}
   ngOnInit(): void {
     this.projects = this.projectService.getAllProjects();
+    this.projectsTest = this.projectService.getUsers();
+    console.log(this.projectsTest);
+    
   }
 }

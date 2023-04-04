@@ -1,4 +1,7 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { catchError, retry } from 'rxjs/operators';
 import { Project } from "../models/project.model";
 
 @Injectable({
@@ -6,6 +9,33 @@ import { Project } from "../models/project.model";
 })
 
 export class ProjectsService {
+    constructor(private httpClient: HttpClient) { }
+    endpoint = 'https://portfolio.accesdenied.net/api/';
+    httpHeader = {
+        headers: new HttpHeaders({
+            'Content-Type': 'application/json',
+        }),
+    };
+    getUsers(): Observable<Project> {
+        return this.httpClient
+            .get<Project>(this.endpoint)
+            .pipe(retry(1), catchError(this.processError));
+    }
+    processError(err: any) {
+        let message = '';
+        if (err.error instanceof ErrorEvent) {
+            message = err.error.message;
+        } else {
+            message = `Error Code: ${err.status}\nMessage: ${err.message}`;
+        }
+        console.log(message);
+        return throwError(() => {
+            message;
+        });
+      }
+    
+    // projects: Project[] = this.getUsers();
+    
     projects: Project[] = [
         {
             id: 0,
@@ -62,6 +92,7 @@ export class ProjectsService {
     ];
     getAllProjects(): Project[]{
         return this.projects;
+        // return this.getUsers();
     }
     getByIdProject(projectId: number): Project{
         const result = this.projects.find(project => project.id === projectId);
@@ -71,16 +102,4 @@ export class ProjectsService {
             return result;
         }
     }
-    /* getFaceSnapById(faceSnapId: number): FaceSnap {
-        const faceSnap = this.facesnaps.find(faceSnap => faceSnap.id === faceSnapId);
-        if (!faceSnap) {
-            throw new Error('facesnap not found 201547gf');
-        } else {
-            return faceSnap;
-        }
-    }
-    snapFaceSnapById(faceSnapId: number, snapType: 'snap' | 'unsnap'): void {
-        const faceSnap = this.getFaceSnapById(faceSnapId);
-        snapType === 'snap' ? faceSnap.snaps++ : faceSnap.snaps--;
-    } */
 }
