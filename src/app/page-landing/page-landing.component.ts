@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Project } from '../models/project.model';
 import { ProjectsService } from "../services/projects.service";
+import { Observable } from 'rxjs';
 
 @Component({
     selector: 'app-page-landing',
@@ -8,9 +9,9 @@ import { ProjectsService } from "../services/projects.service";
     styleUrls: ['./page-landing.component.scss']
 })
 export class PageLandingComponent implements OnInit{
-    projects!: Project[];
+    projects$!: Observable<Project[]>;
     constructor(private projectService: ProjectsService){}
     ngOnInit(): void {
-        this.projects = this.projectService.getAllProjects();
+        this.projects$ = this.projectService.getAllProjects();
     }
 }

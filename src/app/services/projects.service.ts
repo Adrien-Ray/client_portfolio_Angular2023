@@ -1,14 +1,20 @@
 import { Injectable } from '@angular/core';
 import { Project } from "../models/project.model";
+import { Observable, filter, find, map, tap } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 
 export class ProjectsService {
-    constructor() { }
+  constructor(private http: HttpClient){}
+
+  projects: Project[] = [];
+
+
     
-    projects: Project[] = [
+    /* projects: Project[] = [
         {
             project_id: "10",
             project_title: "fcremilly.org",
@@ -425,25 +431,37 @@ export class ProjectsService {
             project_specification_tech: "Ce projet utilise une API simple construite avec PHP et un client web construit avec REACT.",
             project_specification_function: "Ce projet doit, dans une interface statique, récupéré les informations publiques du portfolio via une API, puis les restituer dans un front différent du portfolio servant de base."
           }
-    ];
-    getAllProjects(): Project[]{
+    ]; */
+    /* getAllProjects(): Project[]{
         return this.projects;
         // return this.getUsers();
+    } */
+    getAllProjects(): Observable<Project[]>{
+      return this.http.get<any>('https://portfolio.accesdenied.net/api/index.php').pipe(
+        map(response => response.project)
+      );
     }
     getByIdProject(projectId: number): Project{
         const result = this.projects.find(project => project.project_id === `${projectId}`);
         if (!result) {
-            throw new Error('id not found ...');
+            throw new Error('id not found ... 4587');
         } else {
             return result;
         }
     }
-    getByIdProjectThumbUrl(projectId: number): string{
-        const result = this.projects.find(project => project.project_id === `${projectId}`);
-        if (!result) {
-            throw new Error('id not found ...');
-        } else {
-            return `https://portfolio.accesdenied.net/assets/img/upload/${result.project_thumbnail}`;
-        }
+    getByIdProjectThumbUrl(projectId: string): Observable<string>{
+      return this.http.get<any>('https://portfolio.accesdenied.net/api/index.php').pipe(
+        map(response => response.project),
+        filter(project => project.project_id === projectId),
+        map(response => `https://portfolio.accesdenied.net/assets/img/upload/${response.project_thumbnail}`),
+      );
+      /* const result: Project = this.getAllProjects().pipe(
+        find(obj => obj.project_id === projectId)
+      );
+      if (!result) {
+          throw new Error('id not found ... 999');
+      } else {
+          return `https://portfolio.accesdenied.net/assets/img/upload/${result.project_thumbnail}`;
+      } */
     }
 }
