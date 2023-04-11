@@ -42,13 +42,11 @@ export class ProjectsService {
         // tap(response => response.project_thumbnail === `https://portfolio.accesdenied.net/assets/img/upload/${response.project_thumbnail}`),
       );
     }
-    getByIdProject(projectId: number): Project{
-        const result = this.projects.find(project => project.project_id === `${projectId}`);
-        if (!result) {
-            throw new Error('id not found ... 4587');
-        } else {
-            return result;
-        }
+    getByIdProject(projectId: string): Observable<Project>{
+      return this.http.get<any>('https://portfolio.accesdenied.net/api/index.php').pipe(
+        map(response => response.project),
+        filter(project => project.project_id === Number(projectId)),
+      );
     }
     getByIdProjectThumbUrl(projectId: string): Observable<string>{
       return this.http.get<any>('https://portfolio.accesdenied.net/api/index.php').pipe(

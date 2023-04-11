@@ -1,4 +1,4 @@
-<div class="content">
+<div class="content" *ngIf="(project$ | async) as project">
     <h1>{{project.project_title}}</h1>
-    <img [src]="project_thumbnail_allUrl$" [alt]="project.project_title">
+    <img [src]="project.project_thumbnail" [alt]="project.project_title">
 </div>
