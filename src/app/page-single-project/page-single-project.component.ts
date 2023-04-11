@@ -2,18 +2,21 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Project } from "../models/project.model";
 import { ProjectsService } from "../services/projects.service";
-import { EMPTY, Observable } from 'rxjs';
+import { Observable, filter, find, map, tap } from 'rxjs';
 
 @Component({
   selector: 'app-page-single-project',
   templateUrl: './page-single-project.component.html',
   styleUrls: ['./page-single-project.component.scss']
 })
+
 export class PageSingleProjectComponent implements OnInit {
-  project$: Observable<Project> = EMPTY;
   constructor(private projectsService: ProjectsService, private router: Router, private route: ActivatedRoute){}
-  ngOnInit(): void{
-    const projectId = this.route.snapshot.params['id'];
-    this.project$ = this.projectsService.getByIdProject(projectId);
+  theProject$!: Observable<Project | undefined>;
+  ngOnInit(){
+    const projectId: string = this.route.snapshot.params['id'];
+    this.theProject$ = this.projectsService.projects$.pipe(
+      map(obj => obj.find(obj => obj.project_id === projectId))
+    );
   }
 }

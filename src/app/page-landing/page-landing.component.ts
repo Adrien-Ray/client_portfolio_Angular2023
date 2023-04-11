@@ -10,8 +10,10 @@ import { Observable } from 'rxjs';
 })
 export class PageLandingComponent implements OnInit{
     projects$!: Observable<Project[]>;
+    //project!: Project;
     constructor(private projectService: ProjectsService){}
     ngOnInit(): void {
         this.projects$ = this.projectService.getAllProjects();
+        //this.project = new Project;
     }
 }

@@ -10,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 export class ProjectsService {
   constructor(private http: HttpClient){}
 
-  projects: Project[] = [];
+  projects$: Observable<Project[]> = this.getAllProjects();
 
 
     
@@ -45,7 +45,7 @@ export class ProjectsService {
     getByIdProject(projectId: string): Observable<Project>{
       return this.http.get<any>('https://portfolio.accesdenied.net/api/index.php').pipe(
         map(response => response.project),
-        filter(project => project.project_id === Number(projectId)),
+        filter(response => response.project_id === projectId),
       );
     }
     getByIdProjectThumbUrl(projectId: string): Observable<string>{
