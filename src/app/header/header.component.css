@@ -1,0 +1,11 @@
+header {
+  background-color: rgb(61, 61, 61);
+  padding: 0.5em;
+}
+header nav a {
+  text-decoration: none;
+  color: white;
+}
+header nav a.active {
+  color: rgb(196, 196, 196);
+}/*# sourceMappingURL=header.component.css.map */
