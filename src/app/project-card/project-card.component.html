@@ -1,5 +1,5 @@
-<div class="backCard" [style.background]="'url(https://portfolio.accesdenied.net/assets/img/upload/' + (project.project_thumbnail) + ')'" (click)="onViewProject()">
+<div class="backCard backCard--{{project.project_thumbnail_fit}}" [style.background]="'url(https://portfolio.accesdenied.net/assets/img/upload/' + (project.project_thumbnail) + ')'" (click)="onViewProject()">
     <div class="backCard__filter">
-        <h2>{{project.project_title}}</h2>
+        <!-- <h2>{{project.project_title}}</h2> -->
     </div>
 </div>
