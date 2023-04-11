@@ -15,7 +15,7 @@ export class ProjectCardComponent implements OnInit {
   constructor(private projectsService: ProjectsService,private router: Router) {}
   ngOnInit() {
     this.project_thumbnail_allUrl$ = this.projectsService.getByIdProjectThumbUrl(this.project.project_id);
-    console.log(this.project_thumbnail_allUrl$);
+    console.log('getByIdProjectThumbUrl()', this.project_thumbnail_allUrl$);
     
   }
   onViewProject() {
