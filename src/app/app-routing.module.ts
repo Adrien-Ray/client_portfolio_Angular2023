@@ -9,6 +9,14 @@ const routes: Routes = [
     component: PageLandingComponent
   },
   {
+    path: 'projects',
+    component: PageLandingComponent
+  },
+  {
+    path: 'articles',
+    component: PageLandingComponent
+  },
+  {
     path: 'singleproject/:id',
     component: PageSingleProjectComponent
   }
