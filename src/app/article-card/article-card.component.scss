@@ -1,0 +1,32 @@
+.card{
+    cursor: pointer;
+    width: 17rem;
+    padding: .5rem;
+    margin: .5rem;
+    background-color: #353535;
+    h2{
+        display: block;
+        height: 4rem;
+        font-size: large;
+        margin: 0;
+    }
+    figure{
+        margin: 0;
+        img{
+            width: 100%;
+            aspect-ratio: 1.5/1;
+            object-fit: cover;
+            &.objFit--1{
+                object-fit: contain;
+            }
+        }
+        figcaption{
+            height: 5rem;
+            overflow: hidden;
+            -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgb(0, 0, 0)), to(rgba(0, 0, 0, 0)));
+            margin: .5rem 0 0 0;
+        }
+    }
+    p{
+    }
+}

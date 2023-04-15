@@ -14,6 +14,7 @@ import { PageSingleProjectComponent } from './page-single-project/page-single-pr
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { PageProjectsComponent } from './page-projects/page-projects.component';
 import { PageArticlesComponent } from './page-articles/page-articles.component';
+import { ArticleCardComponent } from './article-card/article-card.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { PageArticlesComponent } from './page-articles/page-articles.component';
     PageSingleProjectComponent,
     PageProjectsComponent,
     PageArticlesComponent,
+    ArticleCardComponent,
   ],
   imports: [
     BrowserModule,

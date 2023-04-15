@@ -21,7 +21,11 @@ const routes: Routes = [
   {
     path: 'singleproject/:id',
     component: PageSingleProjectComponent
-  }
+  },
+  {
+    path: 'singlearticle/:id',
+    component: PageLandingComponent
+  },
 ];
 
 @NgModule({
