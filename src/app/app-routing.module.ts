@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { PageLandingComponent } from './page-landing/page-landing.component';
 import { PageSingleProjectComponent } from "./page-single-project/page-single-project.component";
 import { RouterModule, Routes } from "@angular/router";
+import { PageProjectsComponent } from './page-projects/page-projects.component';
+import { PageArticlesComponent } from './page-articles/page-articles.component';
 
 const routes: Routes = [
   {
@@ -10,11 +12,11 @@ const routes: Routes = [
   },
   {
     path: 'projects',
-    component: PageLandingComponent
+    component: PageProjectsComponent
   },
   {
     path: 'articles',
-    component: PageLandingComponent
+    component: PageArticlesComponent
   },
   {
     path: 'singleproject/:id',

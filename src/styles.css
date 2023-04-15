@@ -17,9 +17,4 @@ body app-root router-outlet {
 body app-root > :nth-child(3) {
   margin-bottom: auto;
   padding: 0 0.5rem;
-}
-body app-root app-page-landing {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
 }/*# sourceMappingURL=styles.css.map */
