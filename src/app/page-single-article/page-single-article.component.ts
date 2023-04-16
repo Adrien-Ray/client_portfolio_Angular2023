@@ -15,10 +15,9 @@ export class PageSingleArticleComponent implements OnInit{
     private route: ActivatedRoute,
   ){}
   theArticle$! : Observable<Article | undefined>
+  theCorp$! : Observable<string>
   ngOnInit(): void {
-    const articleId: string = this.route.snapshot.params['id'];
-    console.log(articleId);
-    
+    const articleId: string = this.route.snapshot.params['id'];    
     this.theArticle$ = this.articlesService.getByIdArticle(articleId);
   }
 }

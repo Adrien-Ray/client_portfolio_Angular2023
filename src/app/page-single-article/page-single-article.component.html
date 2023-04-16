@@ -1,10 +1,9 @@
 <div class="content" *ngIf="theArticle$ | async as article">
     <h1>{{article.article_title}}</h1>
-    <!-- <img [src]="'https://portfolio.accesdenied.net/assets/img/upload/' + project.project_thumbnail" [alt]="project.project_title">
+    <img [src]="'https://portfolio.accesdenied.net/assets/img/upload/' + article.article_thumbnail" [alt]="article.article_title">
     <div class="links">
-        <a target="_blank" *ngIf="project.project_link !== ''" href="{{project.project_link}}" class="button">voir le projet</a>
-        <a target="_blank" *ngIf="project.project_github !== ''" href="{{project.project_github}}" class="button">voir le repository</a>
-        <a target="_blank" *ngIf="project.project_design_file_link !== ''" href="{{project.project_design_file_link}}" class="button">voir le dossier</a>
+        <!-- <a target="_blank" *ngIf="article.project_link !== ''" href="{{'https://portfolio.accesdenied.net/pages/blog-art.php?art=' + article.article_id}}" class="button">voir la source</a> -->
     </div>
-    <p>{{project.project_context}}</p> -->
+    <p class="content__article_preambule">{{article.article_preambule}}</p>
+    <div class="content__article_corps" [innerHTML]="article.article_corps"></div>
 </div>
