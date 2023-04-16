@@ -4,6 +4,7 @@ import { PageSingleProjectComponent } from "./page-single-project/page-single-pr
 import { RouterModule, Routes } from "@angular/router";
 import { PageProjectsComponent } from './page-projects/page-projects.component';
 import { PageArticlesComponent } from './page-articles/page-articles.component';
+import { PageSingleArticleComponent } from './page-single-article/page-single-article.component';
 
 const routes: Routes = [
   {
@@ -24,7 +25,7 @@ const routes: Routes = [
   },
   {
     path: 'singlearticle/:id',
-    component: PageLandingComponent
+    component: PageSingleArticleComponent
   },
 ];
 

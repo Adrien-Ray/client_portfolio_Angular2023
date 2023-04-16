@@ -15,8 +15,6 @@ export class PageSingleProjectComponent implements OnInit {
   theProject$!: Observable<Project | undefined>;
   ngOnInit(){
     const projectId: string = this.route.snapshot.params['id'];
-    this.theProject$ = this.projectsService.projects$.pipe(
-      map(obj => obj.find(obj => obj.project_id === projectId))
-    );
+    this.theProject$ = this.projectsService.getByIdProject(projectId);
   }
 }

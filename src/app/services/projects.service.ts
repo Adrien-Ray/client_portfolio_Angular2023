@@ -42,10 +42,9 @@ export class ProjectsService {
         // tap(response => response.project_thumbnail === `https://portfolio.accesdenied.net/assets/img/upload/${response.project_thumbnail}`),
       );
     }
-    getByIdProject(projectId: string): Observable<Project>{
-      return this.http.get<any>('https://portfolio.accesdenied.net/api/index.php').pipe(
-        map(response => response.project),
-        filter(response => response.project_id === projectId),
+    getByIdProject(projectId: string): Observable<Project | undefined>{
+      return this.getAllProjects().pipe(
+        map(obj => obj.find(obj => obj.project_id === projectId)),
       );
     }
     getByIdProjectThumbUrl(projectId: string): Observable<string>{

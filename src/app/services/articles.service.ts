@@ -15,4 +15,9 @@ export class ArticlesService {
       map(response => response.article),
     );
   }
+  getByIdArticle(articleId: string): Observable<Article | undefined>{
+    return this.getAllArticles().pipe(
+      map(obj => obj.find(obj => obj.article_id === articleId)),
+    );
+  }
 };
