@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Project } from "../models/project.model";
-import { Observable, filter, map } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environment } from "../../environments/environment";
 
@@ -44,6 +44,7 @@ export class ProjectsService {
     getAllProjects(): Observable<Project[]>{
       return this.http.get<any>(`${this.apiEndPoint}index.php`).pipe(
         map(response => response.project),
+        map(arr => arr.sort(( a:Project, b:Project ) => a.project_begin < b.project_begin ))
       );
     }
     getByIdProject(projectId: string): Observable<Project | undefined>{

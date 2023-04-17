@@ -6,7 +6,7 @@ export class Article {
     article_autor!: string;
     article_preambule!: string | null;
     article_corps!: string | null;
-    article_parution!: string | null;
+    article_parution!: string;
     article_modif!: string | null;
     article_visibility!: string;
 }

@@ -19,6 +19,7 @@ export class ArticlesService {
   getAllArticles(): Observable<Article[]>{
     return this.http.get<any>(`${this.apiEndPoint}index.php`).pipe(
       map(response => response.article),
+      map(arr => arr.sort(( a:Article, b:Article ) => a.article_parution < b.article_parution ))
     );
   }
   getByIdArticle(articleId: string): Observable<Article | undefined>{
