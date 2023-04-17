@@ -35,12 +35,12 @@
     }
 } */
 .backCard {
-  width: 20rem;
+  width: 17rem;
+  margin: 0.5rem;
   max-width: calc(100vw - 2rem);
   overflow: hidden;
   cursor: pointer;
   color: white;
-  margin: 1rem;
   transition: all 0.3s;
   background-color: rgb(60, 60, 60);
 }

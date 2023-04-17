@@ -1,9 +1,15 @@
 .card{
     cursor: pointer;
     width: 17rem;
-    padding: .5rem;
     margin: .5rem;
     background-color: #353535;
+    transition: all .3s;
+    &:hover{
+        transform: scale(105%);
+    }
+    h2, figcaption, p{
+        padding: .5rem;
+    }
     h2{
         display: block;
         height: 4rem;

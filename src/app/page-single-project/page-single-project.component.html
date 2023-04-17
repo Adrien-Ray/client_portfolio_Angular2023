@@ -2,9 +2,9 @@
     <h1>{{project.project_title}}</h1>
     <img [src]="uploadFolder + project.project_thumbnail" [alt]="project.project_title">
     <div class="links">
-        <a target="_blank" *ngIf="project.project_link !== ''" href="{{project.project_link}}" mat-raised-button color="primary" class="button">voir le projet</a>
-        <a target="_blank" *ngIf="project.project_github !== ''" href="{{project.project_github}}" mat-raised-button color="primary" class="button">voir le repository</a>
-        <a target="_blank" *ngIf="project.project_design_file_link !== ''" href="{{project.project_design_file_link}}" mat-raised-button color="primary" class="button">voir le dossier</a>
+        <a target="_blank" *ngIf="project.project_link !== ''" href="{{project.project_link}}" mat-raised-button color="primary" class="button"><mat-icon aria-label="view this project in production">search</mat-icon>voir le projet</a>
+        <a target="_blank" *ngIf="project.project_github !== ''" href="{{project.project_github}}" mat-raised-button color="primary" class="button"><mat-icon aria-label="view the git repository">code</mat-icon>voir le repository</a>
+        <a target="_blank" *ngIf="project.project_design_file_link !== ''" href="{{project.project_design_file_link}}" mat-raised-button color="primary" class="button"><mat-icon aria-label="view the folder">folder_open</mat-icon>voir le dossier</a>
     </div>
     <p>{{project.project_context}}</p>
 </div>
