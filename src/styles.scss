@@ -39,6 +39,11 @@ body {
         margin-bottom: 0;
         flex: 2;
     }
+    app-header{
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
     // content tinyMce : 
     .content__article_corps{
         a{
@@ -49,11 +54,13 @@ body {
 
 
 @keyframes opening {
-    from{
+    0%{
         opacity: 0;
+        // transform: translateX(-10vw);
     }
-    to{
+    100%{
         opacity: 1;
+        // transform: translateX(0px);
     }
 }
 

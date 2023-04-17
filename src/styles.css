@@ -39,15 +39,20 @@ body app-page-landing {
   margin-bottom: 0;
   flex: 2;
 }
+body app-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
 body .content__article_corps a {
   color: white;
 }
 
 @keyframes opening {
-  from {
+  0% {
     opacity: 0;
   }
-  to {
+  100% {
     opacity: 1;
   }
 }
