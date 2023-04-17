@@ -41,15 +41,16 @@
   cursor: pointer;
   color: white;
   margin: 1rem;
-  transition: all 0.5s;
-  padding: 0.5rem;
+  transition: all 0.3s;
+  background-color: rgb(60, 60, 60);
 }
 .backCard:hover {
-  transform: scale(110%);
+  transform: scale(105%);
 }
 .backCard mat-card-header {
   height: 3rem;
   overflow: hidden;
+  padding: 0.5rem;
 }
 .backCard img {
   width: 100%;

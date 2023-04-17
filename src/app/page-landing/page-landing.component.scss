@@ -1,0 +1,18 @@
+.landing{
+    >*{
+        margin: 3rem 0;
+    }
+    >h1{
+        text-align: center;
+        font-size: xx-large;
+    }
+    >.landing__menu{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        >a{
+            margin: 0 .5rem .5rem 0;
+            font-size: large;
+        }
+    }
+}

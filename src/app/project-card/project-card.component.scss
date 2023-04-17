@@ -42,14 +42,15 @@
     cursor: pointer;
     color: white;
     margin: 1rem;
-    transition: all .5s;
-    padding: .5rem;
+    transition: all .3s;
+    background-color: rgb(60, 60, 60);
     &:hover{
-        transform: scale(110%);
+        transform: scale(105%);
     }
     mat-card-header{
         height: 3rem;
         overflow: hidden;
+        padding: .5rem;
     }
     img{
         width: 100%;

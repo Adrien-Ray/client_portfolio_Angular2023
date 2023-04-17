@@ -31,6 +31,13 @@ body a.button {
 body a.button:hover {
   box-shadow: inset 0 0 2rem blue;
 }
+body app-page-landing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0;
+  flex: 2;
+}
 body .content__article_corps a {
   color: white;
 }
@@ -129,4 +136,13 @@ pre[class*=language-] {
 
 .token.entity {
   cursor: help;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }/*# sourceMappingURL=styles.css.map */

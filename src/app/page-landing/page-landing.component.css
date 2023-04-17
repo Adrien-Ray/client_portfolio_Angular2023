@@ -1,1 +1,16 @@
-/*# sourceMappingURL=page-landing.component.css.map */
+.landing > * {
+  margin: 3rem 0;
+}
+.landing > h1 {
+  text-align: center;
+  font-size: xx-large;
+}
+.landing > .landing__menu {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.landing > .landing__menu > a {
+  margin: 0 0.5rem 0.5rem 0;
+  font-size: large;
+}/*# sourceMappingURL=page-landing.component.css.map */
