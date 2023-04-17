@@ -16,6 +16,7 @@ body {
         >:nth-child(3) {
             margin-bottom: auto;
             padding: 0 .5rem;
+            animation: opening .5s ease-in-out 0s 1 normal forwards;
         }
     }
     a.button{
@@ -47,6 +48,14 @@ body {
 }
 
 
+@keyframes opening {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
 
 
 /* PrismJS 1.28.0
