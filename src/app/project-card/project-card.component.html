@@ -1,5 +1,11 @@
-<div class="backCard backCard--{{project.project_thumbnail_fit}}" [style.background]="'url(https://portfolio.accesdenied.net/assets/img/upload/' + (project.project_thumbnail) + ')'" (click)="onViewProject()">
+<!-- <div class="backCard backCard--{{project.project_thumbnail_fit}}" [style.background]="'url(https://portfolio.accesdenied.net/assets/img/upload/' + (project.project_thumbnail) + ')'" (click)="onViewProject()">
     <div class="backCard__filter">
-        <!-- <h2>{{project.project_title}}</h2> -->
     </div>
-</div>
+</div> -->
+<mat-card  class="backCard backCard--{{project.project_thumbnail_fit}}" (click)="onViewProject()">
+    <mat-card-header>
+        <mat-card-title>{{project.project_title}}</mat-card-title>
+    </mat-card-header>
+    <img class="img--{{project.project_thumbnail_fit}}" mat-card-image src="https://portfolio.accesdenied.net/assets/img/upload/{{project.project_thumbnail}}" alt="Photo of a Shiba Inu">
+  </mat-card>
+  

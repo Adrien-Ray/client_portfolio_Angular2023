@@ -1,4 +1,4 @@
-.backCard {
+/* .backCard {
     width: 12rem;
     aspect-ratio: 1/1;
     border-radius: 50%;
@@ -31,6 +31,32 @@
             backdrop-filter: blur(0px) grayscale(0%);
             >h2{
             }
+        }
+    }
+} */
+
+.backCard {
+    width: 20rem;
+    max-width: calc(100vw - 2rem);
+    overflow: hidden;
+    cursor: pointer;
+    color: white;
+    margin: 1rem;
+    transition: all .5s;
+    padding: .5rem;
+    &:hover{
+        transform: scale(110%);
+    }
+    mat-card-header{
+        height: 3rem;
+        overflow: hidden;
+    }
+    img{
+        width: 100%;
+        aspect-ratio: 1.5/1;
+        object-fit: cover;
+        &.img--1{
+            object-fit: contain;
         }
     }
 }
