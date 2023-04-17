@@ -51,19 +51,4 @@ export class ProjectsService {
         map(obj => obj.find(obj => obj.project_id === projectId)),
       );
     }
-    getByIdProjectThumbUrl(projectId: string): Observable<string>{
-      return this.http.get<any>(`${this.apiEndPoint}index.php`).pipe(
-        map(response => response.project),
-        filter(project => project.project_id === projectId),
-        map(response => `${this.uploadFolder}${response.project_thumbnail}`),
-      );
-      /* const result: Project = this.getAllProjects().pipe(
-        find(obj => obj.project_id === projectId)
-      );
-      if (!result) {
-          throw new Error('id not found ... 999');
-      } else {
-          return `${this.uploadFolder}${result.project_thumbnail}`;
-      } */
-    }
 }
