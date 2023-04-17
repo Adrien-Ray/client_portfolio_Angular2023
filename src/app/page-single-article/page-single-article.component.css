@@ -1,5 +1,9 @@
 .content img {
   width: 100%;
+  max-width: 50rem;
+  max-height: 50vh;
+  object-fit: contain;
+  object-position: left;
 }
 .content .content__article_preambule {
   font-style: italic;

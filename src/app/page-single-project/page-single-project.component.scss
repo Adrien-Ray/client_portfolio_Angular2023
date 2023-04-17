@@ -1,6 +1,10 @@
 .content {
     img {
-        max-width: calc(100%);
+        width: 100%;
+        max-width: 50rem;
+        max-height: 50vh;
+        object-fit: contain;
+        object-position: left;
     }
     div.links{
     }
