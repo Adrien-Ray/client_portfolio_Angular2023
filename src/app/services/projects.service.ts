@@ -1,15 +1,20 @@
 import { Injectable } from '@angular/core';
 import { Project } from "../models/project.model";
-import { Observable, filter, find, map, tap } from 'rxjs';
+import { Observable, filter, map } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { environment } from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root',
 })
 
 export class ProjectsService {
-  constructor(private http: HttpClient){}
-
+  apiEndPoint! : string;
+  uploadFolder! : string;
+  constructor(private http: HttpClient){
+    this.apiEndPoint = environment.apiEndPoint;
+    this.uploadFolder = environment.uploadFolder;
+  }
   projects$: Observable<Project[]> = this.getAllProjects();
 
 
@@ -37,9 +42,8 @@ export class ProjectsService {
         // return this.getUsers();
     } */
     getAllProjects(): Observable<Project[]>{
-      return this.http.get<any>('https://portfolio.accesdenied.net/api/index.php').pipe(
+      return this.http.get<any>(`${this.apiEndPoint}index.php`).pipe(
         map(response => response.project),
-        // tap(response => response.project_thumbnail === `https://portfolio.accesdenied.net/assets/img/upload/${response.project_thumbnail}`),
       );
     }
     getByIdProject(projectId: string): Observable<Project | undefined>{
@@ -48,10 +52,10 @@ export class ProjectsService {
       );
     }
     getByIdProjectThumbUrl(projectId: string): Observable<string>{
-      return this.http.get<any>('https://portfolio.accesdenied.net/api/index.php').pipe(
+      return this.http.get<any>(`${this.apiEndPoint}index.php`).pipe(
         map(response => response.project),
         filter(project => project.project_id === projectId),
-        map(response => `https://portfolio.accesdenied.net/assets/img/upload/${response.project_thumbnail}`),
+        map(response => `${this.uploadFolder}${response.project_thumbnail}`),
       );
       /* const result: Project = this.getAllProjects().pipe(
         find(obj => obj.project_id === projectId)
@@ -59,7 +63,7 @@ export class ProjectsService {
       if (!result) {
           throw new Error('id not found ... 999');
       } else {
-          return `https://portfolio.accesdenied.net/assets/img/upload/${result.project_thumbnail}`;
+          return `${this.uploadFolder}${result.project_thumbnail}`;
       } */
     }
 }

@@ -3,6 +3,7 @@ import { Observable, filter, map } from 'rxjs';
 import { Article } from '../models/article.model';
 import { ActivatedRoute } from '@angular/router';
 import { ArticlesService } from '../services/articles.service';
+import { environment } from "../../environments/environment";
 // import Prism from 'prismjs';
 
 @Component({
@@ -11,10 +12,13 @@ import { ArticlesService } from '../services/articles.service';
   styleUrls: ['./page-single-article.component.scss']
 })
 export class PageSingleArticleComponent implements OnInit{
+  uploadFolder! : string;
   constructor(
     private articlesService : ArticlesService,
     private route: ActivatedRoute,
-  ){}
+  ){
+    this.uploadFolder = environment.uploadFolder;
+  }
   theArticle$! : Observable<Article | undefined>
   theCorp$! : Observable<string | null | undefined>
   ngOnInit(): void {
