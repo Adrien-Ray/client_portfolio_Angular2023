@@ -63,3 +63,8 @@
         }
     }
 }
+@media (max-width: 500px) {
+    .backCard{
+        width: calc(100vw - 2rem);
+    }
+}

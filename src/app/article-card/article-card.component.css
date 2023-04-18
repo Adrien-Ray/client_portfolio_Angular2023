@@ -33,4 +33,10 @@
   overflow: hidden;
   -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgb(0, 0, 0)), to(rgba(0, 0, 0, 0)));
   margin: 0.5rem 0 0 0;
+}
+
+@media (max-width: 500px) {
+  .card {
+    width: calc(100vw - 2rem);
+  }
 }/*# sourceMappingURL=article-card.component.css.map */

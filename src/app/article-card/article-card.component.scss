@@ -36,3 +36,8 @@
         }
     }
 }
+@media (max-width: 500px) {
+    .card{
+        width: calc(100vw - 2rem);
+    }
+}

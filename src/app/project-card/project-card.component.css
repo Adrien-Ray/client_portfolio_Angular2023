@@ -61,4 +61,10 @@
 }
 .backCard img.img--1 {
   object-fit: contain;
+}
+
+@media (max-width: 500px) {
+  .backCard {
+    width: calc(100vw - 2rem);
+  }
 }/*# sourceMappingURL=project-card.component.css.map */
