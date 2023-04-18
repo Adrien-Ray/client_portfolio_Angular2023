@@ -33,13 +33,13 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { FormControl } from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormControl } from '@angular/forms';*/
+import { MatFormFieldModule } from '@angular/material/form-field';/*
 import { FormsModule } from '@angular/forms';
 import { MatGridListModule } from '@angular/material/grid-list';*/
 import { MatIconModule } from '@angular/material/icon';
-import { PageContactComponent } from './page-contact/page-contact.component';/*
-import { MatInputModule } from '@angular/material/input';
+import { PageContactComponent } from './page-contact/page-contact.component';
+import { MatInputModule } from '@angular/material/input';/*
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { NgForm } from '@angular/forms';
@@ -48,8 +48,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatRadioModule } from '@angular/material/radio';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatRippleModule } from '@angular/material/core';
-import { MatSelectModule } from '@angular/material/select';
+import { MatRippleModule } from '@angular/material/core';*/
+import { MatSelectModule } from '@angular/material/select';/*
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -94,12 +94,12 @@ import { MatTreeModule } from '@angular/material/tree'; */
     MatDialogModule,
     MatDividerModule,
     MatExpansionModule,
-    FormControl,
-    MatFormFieldModule,
+    FormControl,*/
+    MatFormFieldModule,/*
     FormsModule,
     MatGridListModule,*/
-    MatIconModule,/*
-    MatInputModule,
+    MatIconModule,
+    MatInputModule,/*
     MatListModule,
     MatMenuModule,
     NgForm,
@@ -108,8 +108,8 @@ import { MatTreeModule } from '@angular/material/tree'; */
     MatProgressSpinnerModule,
     MatRadioModule,
     ReactiveFormsModule,
-    MatRippleModule,
-    MatSelectModule,
+    MatRippleModule,*/
+    MatSelectModule,/*
     MatSidenavModule,
     MatSlideToggleModule,
     MatSliderModule,
