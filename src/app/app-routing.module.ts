@@ -27,6 +27,10 @@ const routes: Routes = [
     path: 'singlearticle/:id',
     component: PageSingleArticleComponent
   },
+  {
+    path: 'contact',
+    component: PageLandingComponent
+  },
 ];
 
 @NgModule({
