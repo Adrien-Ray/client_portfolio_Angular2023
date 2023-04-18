@@ -37,7 +37,8 @@ import { FormControl } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { MatGridListModule } from '@angular/material/grid-list';*/
-import { MatIconModule } from '@angular/material/icon';/*
+import { MatIconModule } from '@angular/material/icon';
+import { PageContactComponent } from './page-contact/page-contact.component';/*
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
@@ -72,6 +73,7 @@ import { MatTreeModule } from '@angular/material/tree'; */
     PageArticlesComponent,
     ArticleCardComponent,
     PageSingleArticleComponent,
+    PageContactComponent,
   ],
   imports: [
     BrowserModule,

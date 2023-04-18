@@ -5,6 +5,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { PageProjectsComponent } from './page-projects/page-projects.component';
 import { PageArticlesComponent } from './page-articles/page-articles.component';
 import { PageSingleArticleComponent } from './page-single-article/page-single-article.component';
+import { PageContactComponent } from './page-contact/page-contact.component';
 
 const routes: Routes = [
   {
@@ -29,7 +30,7 @@ const routes: Routes = [
   },
   {
     path: 'contact',
-    component: PageLandingComponent
+    component: PageContactComponent
   },
 ];
 
