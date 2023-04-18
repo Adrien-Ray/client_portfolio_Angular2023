@@ -1,10 +1,16 @@
 <div class="content" *ngIf="theProject$ | async as project">
     <h1>{{project.project_title}}</h1>
+    <p class="date">{{project.project_begin}}</p>
     <img [src]="uploadFolder + project.project_thumbnail" [alt]="project.project_title">
     <div class="links">
         <a target="_blank" *ngIf="project.project_link !== ''" href="{{project.project_link}}" mat-raised-button color="primary" class="button"><mat-icon aria-label="view this project in production">search</mat-icon>voir le projet</a>
         <a target="_blank" *ngIf="project.project_github !== ''" href="{{project.project_github}}" mat-raised-button color="primary" class="button"><mat-icon aria-label="view the git repository">code</mat-icon>voir le repository</a>
         <a target="_blank" *ngIf="project.project_design_file_link !== ''" href="{{project.project_design_file_link}}" mat-raised-button color="primary" class="button"><mat-icon aria-label="view the folder">folder_open</mat-icon>voir le dossier</a>
     </div>
-    <p>{{project.project_context}}</p>
+    <h2 *ngIf="project.project_context !== ''">contexte</h2>
+    <p *ngIf="project.project_context !== ''">{{project.project_context}}</p>
+    <h2 *ngIf="project.project_specification_tech !== ''">specifications techniques</h2>
+    <p *ngIf="project.project_specification_tech !== ''">{{project.project_specification_tech}}</p>
+    <h2 *ngIf="project.project_specification_function !== ''">spécifications fonctionnels</h2>
+    <p *ngIf="project.project_specification_function !== ''">{{project.project_specification_function}}</p>
 </div>

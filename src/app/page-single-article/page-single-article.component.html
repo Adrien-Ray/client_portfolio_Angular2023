@@ -1,5 +1,6 @@
 <div layout="row" class="content" *ngIf="theArticle$ | async as article">
     <h1>{{article.article_title}}</h1>
+    <p class="date">{{article.article_parution | slice:0:10}}</p>
     <img [src]="uploadFolder + article.article_thumbnail" [alt]="article.article_title">
     <div class="links">
     </div>
