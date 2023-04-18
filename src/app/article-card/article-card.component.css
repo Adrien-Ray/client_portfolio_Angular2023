@@ -8,10 +8,10 @@
 .card:hover {
   transform: scale(105%);
 }
-.card h2, .card figcaption, .card p {
+.card mat-card-header, .card figcaption {
   padding: 0.5rem;
 }
-.card h2 {
+.card mat-card-header mat-card-title {
   display: block;
   height: 4rem;
   font-size: large;

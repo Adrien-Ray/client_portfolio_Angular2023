@@ -5,6 +5,7 @@
 <mat-card  class="backCard backCard--{{project.project_thumbnail_fit}}" (click)="onViewProject()">
     <mat-card-header>
         <mat-card-title>{{project.project_title}}</mat-card-title>
+        <mat-card-subtitle>{{project.project_begin}}</mat-card-subtitle>
     </mat-card-header>
     <img class="img--{{project.project_thumbnail_fit}}" mat-card-image src="{{uploadFolder}}{{project.project_thumbnail}}" alt="Photo of a Shiba Inu">
   </mat-card>

@@ -36,7 +36,7 @@
 } */
 
 .backCard {
-    width: 17rem;
+    width: 18rem;
     margin: .5rem;
     max-width: calc(100vw - 2rem);
     overflow: hidden;
@@ -48,9 +48,11 @@
         transform: scale(105%);
     }
     mat-card-header{
-        height: 3rem;
         overflow: hidden;
         padding: .5rem;
+        mat-card-title{
+            height: 4rem;
+        }
     }
     img{
         width: 100%;

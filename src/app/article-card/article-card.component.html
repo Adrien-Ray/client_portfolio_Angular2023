@@ -1,5 +1,8 @@
 <mat-card class="card" (click)="onViewArticle()">
-    <h2>{{article.article_title}}</h2>
+    <mat-card-header>
+        <mat-card-title>{{article.article_title}}</mat-card-title>
+        <mat-card-subtitle>{{article.article_parution | slice:0:10}}</mat-card-subtitle>
+    </mat-card-header>
     <figure>
         <img class="objFit--{{article.article_thumbnail_fit}}" src="{{uploadFolder + article.article_thumbnail}}" alt="">
         <figcaption>{{article.article_preambule}}</figcaption>
