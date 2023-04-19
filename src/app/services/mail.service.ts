@@ -1,8 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpClientModule, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { FormValue } from '../models/formValue.model';
-import { Observable, catchError, map } from 'rxjs';
+import { Observable, catchError, map, tap, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,9 +12,14 @@ export class MailService {
   constructor(private http: HttpClient) {
     this.apiEndPoint = environment.apiEndPoint;
   }
+  headers = new HttpHeaders({ 
+    'Access-Control-Allow-Origin':'*',
+    'Access-Control-Allow-Methods':'*',
+    'content-type': 'application/json',
+  });  
+  requestOptions = { headers: this.headers };
   sendMail(formObj : FormValue){
     console.log('to send : ', formObj);
-    const headers = { 'content-type': 'application/json'};
     const body = JSON.stringify(formObj);
     console.log('body : ', body);
     /* return this.http.post<any>(`${this.apiEndPoint}mail.php`, body, { headers } ).pipe(
@@ -24,6 +29,15 @@ export class MailService {
       }),
       map(res => console.log(res)),
     ) */
-    this.http.post<any>(`${this.apiEndPoint}mail.php`, { mail:"machin@truc.fr", message:"ceci est un message test du matin" }).subscribe();
+    return this.http.post<any>(`${this.apiEndPoint}mail.php`, `{ mail:"machin@truc.fr", message:"ceci est un message test Angular non dynamique" }`, this.requestOptions ).subscribe({
+      next: data => {
+          console.log(data);
+          
+      },
+      error: error => {
+          console.error('There was an error!', error);
+          alert('un problème est survenu');
+      }
+    })
   }
 }
