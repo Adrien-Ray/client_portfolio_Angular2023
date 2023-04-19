@@ -7,5 +7,5 @@
         <mat-label>entrer votre message:</mat-label>
         <textarea matInput placeholder="" formControlName="message"></textarea>
     </mat-form-field>
-    <button mat-raised-button  type="submit" (click)="onSubmitForm()"><mat-icon aria-label="view articles">send</mat-icon>envoyer</button>
+    <button [disabled]="form.invalid" mat-raised-button type="submit" (click)="onSubmitForm()"><mat-icon aria-label="view articles">send</mat-icon>envoyer</button>
 </form>
