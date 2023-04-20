@@ -29,7 +29,7 @@ export class MailService {
       }),
       map(res => console.log(res)),
     ) */
-    return this.http.post<any>(`${this.apiEndPoint}mail.php`, `{ mail:"machin@truc.fr", message:"ceci est un message test Angular non dynamique" }`, this.requestOptions ).subscribe({
+    return this.http.post<any>(`${this.apiEndPoint}mail.php`, body/* , this.requestOptions */ ).subscribe({
       next: data => {
           console.log(data);
           
