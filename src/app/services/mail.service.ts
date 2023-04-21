@@ -18,7 +18,7 @@ export class MailService {
     'content-type': 'application/json',
   });  
   requestOptions = { headers: this.headers };
-  sendMail(formObj : FormValue){
+  sendMail(formObj : FormValue, constformValidAction: any){
     console.log('to send : ', formObj);
     const body = JSON.stringify(formObj);
     console.log('body : ', body);
@@ -32,11 +32,11 @@ export class MailService {
     return this.http.post<any>(`${this.apiEndPoint}mail.php`, body/* , this.requestOptions */ ).subscribe({
       next: data => {
           console.log(data);
-          
+          constformValidAction(2);
       },
       error: error => {
           console.error('There was an error!', error);
-          alert('un problème est survenu');
+          constformValidAction(1);
       }
     })
   }

@@ -3,7 +3,10 @@
   max-width: 500px;
   width: 100%;
 }
-
-.example-full-width {
+.example-form .example-full-width {
   width: 100%;
+}
+.example-form button[type=submit] {
+  margin-left: auto;
+  display: block;
 }/*# sourceMappingURL=page-contact.component.css.map */

@@ -34,6 +34,12 @@ body app-header {
   top: 0;
   z-index: 100;
 }
+body app-page-contact {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 body .content__article_corps a {
   color: white;
 }
