@@ -11,6 +11,11 @@ footer a {
   text-decoration: none;
   margin: 0 1rem 0 0;
   width: 4rem;
+  padding: 0.2rem;
+  border-radius: 0.5rem;
+}
+footer a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 footer a figure {
   width: 100%;
