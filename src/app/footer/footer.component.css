@@ -6,19 +6,24 @@ footer {
   display: flex;
   justify-content: center;
 }
-footer figure {
+footer a {
+  color: white;
+  text-decoration: none;
   margin: 0 1rem 0 0;
   width: 4rem;
+}
+footer a figure {
+  width: 100%;
   cursor: pointer;
 }
-footer figure:last-child {
+footer a figure:last-child {
   margin: 0;
 }
-footer figure img {
+footer a figure img {
   width: 100%;
   aspect-ratio: 1/1;
 }
-footer figure figcaption {
+footer a figure figcaption {
   text-align: center;
   font-weight: bold;
 }/*# sourceMappingURL=footer.component.css.map */
