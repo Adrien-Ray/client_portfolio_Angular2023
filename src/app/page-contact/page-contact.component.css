@@ -6,6 +6,9 @@
 .example-form .example-full-width {
   width: 100%;
 }
+.example-form .example-full-width textarea {
+  height: 10rem;
+}
 .example-form button[type=submit] {
   margin-left: auto;
   display: block;
