@@ -3,7 +3,19 @@ header {
     padding: 1em;
     margin-bottom: 2rem;
     box-shadow: 0 0px 5px black;
-    nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    >img{
+        height: 3rem;
+        cursor: pointer;
+    }
+    >nav{
+        flex: 1;
+    }
+    nav.desktop {
+        display: none;
+        text-align: right;
         a {
             text-decoration: none;
             color: white;
@@ -14,5 +26,16 @@ header {
             }
         }
     }
+    nav.mobile{
+        text-align: right;
+    }
 }
 
+@media (min-width: 750px) {
+    nav.desktop{
+        display: block !important;
+    }
+    nav.mobile{
+        display: none;
+    }
+}

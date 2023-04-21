@@ -40,8 +40,8 @@ import { MatGridListModule } from '@angular/material/grid-list';*/
 import { MatIconModule } from '@angular/material/icon';
 import { PageContactComponent } from './page-contact/page-contact.component';
 import { MatInputModule } from '@angular/material/input';/*
-import { MatListModule } from '@angular/material/list';
-import { MatMenuModule } from '@angular/material/menu';
+import { MatListModule } from '@angular/material/list';*/
+import { MatMenuModule } from '@angular/material/menu';/*
 import { NgForm } from '@angular/forms';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
@@ -100,9 +100,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     MatGridListModule,*/
     MatIconModule,
-    MatInputModule,/*
-    MatListModule,
-    MatMenuModule,
+    MatInputModule,
+    /* MatListModule, */
+    MatMenuModule,/*
     NgForm,
     MatPaginatorModule,
     MatProgressBarModule,

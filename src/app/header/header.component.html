@@ -1,9 +1,23 @@
 <header>
-    <nav>
+    <img routerLink="" src="./favicon.ico" alt="">
+    <nav class="desktop">
         <a mat-button routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><mat-icon aria-label="go to home page">home</mat-icon>Home</a>
         <a mat-button routerLink="projects" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><mat-icon aria-label="view projects">code</mat-icon>Projects</a>
         <a mat-button routerLink="articles" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><mat-icon aria-label="view articles">newspaper</mat-icon>Articles</a>
         <a mat-button routerLink="contact" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><mat-icon aria-label="go to contact page">alternate_email</mat-icon>contact</a>
         <a mat-raised-button color="" href="./assets/cv_2023.pdf" target="_blank"><mat-icon aria-label="Example home icon">picture_as_pdf</mat-icon>view CV</a>
+    </nav>
+    <nav class="mobile">
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <a mat-menu-item routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><mat-icon aria-label="go to home page">home</mat-icon>Home</a>
+            <a mat-menu-item routerLink="projects" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><mat-icon aria-label="view projects">code</mat-icon>Projects</a>
+            <a mat-menu-item routerLink="articles" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><mat-icon aria-label="view articles">newspaper</mat-icon>Articles</a>
+            <a mat-menu-item routerLink="contact" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><mat-icon aria-label="go to contact page">alternate_email</mat-icon>contact</a>
+            <a mat-menu-item href="./assets/cv_2023.pdf" target="_blank"><mat-icon aria-label="Example home icon">picture_as_pdf</mat-icon>view CV</a>
+          </mat-menu>
+          
     </nav>
 </header>
