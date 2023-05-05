@@ -31,6 +31,10 @@
   display: block;
 }
 .landing > .landing__progress h2 {
+  margin: 4rem 0 2rem 0;
+  font-size: xx-large;
+}
+.landing > .landing__progress h3 {
   margin: 1.5rem 0 0 0;
   font-size: large;
 }/*# sourceMappingURL=page-landing.component.css.map */
