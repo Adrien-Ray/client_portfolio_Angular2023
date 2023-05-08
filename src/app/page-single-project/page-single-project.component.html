@@ -1,4 +1,4 @@
-<div class="content" *ngIf="theProject$ | async as project">
+<div class="content content--width" *ngIf="theProject$ | async as project">
     <h1>{{project.project_title}}</h1>
     <p class="date">{{project.project_begin}}</p>
     <img [src]="uploadFolder + project.project_thumbnail" [alt]="project.project_title">

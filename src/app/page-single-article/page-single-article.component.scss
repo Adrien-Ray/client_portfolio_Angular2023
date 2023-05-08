@@ -1,14 +1,9 @@
 .content{
-    img{
-        width: 100%;
-        max-width: 50rem;
-        max-height: 50vh;
-        object-fit: contain;
-        object-position: left;
-    }
+    // voir complement dans main.js => .content--width
     .content__article_preambule{
         font-style: italic;
         font-weight: bold;
-        margin: 3rem 0;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
     }
 }

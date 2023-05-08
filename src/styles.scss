@@ -40,6 +40,24 @@ body {
         justify-content: center;
         align-items: center;
       }
+    .content--width{
+        >*{
+            max-width: 50rem;
+            margin: auto;
+            display: block;
+        }
+        >img {
+            width: 100%;
+            object-fit: contain;
+            object-position: left;
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+        }
+        h1{
+            font-size: xx-large;
+            margin-bottom: 20px;
+        }
+    }
     // content tinyMce : 
     .content__article_corps{
         a{
